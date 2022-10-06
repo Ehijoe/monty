@@ -77,13 +77,8 @@ command_t tokenize(char *line, unsigned int line_no)
 	int argc;
 
 	opcode = strtok(line, " \t\n\v\f\r");
-	/* For comments and empty lines return NULL */
 	if (opcode == NULL || opcode[0] == '#')
-	{
-		command.f = NULL;
-		command.arg = 0;
 		return (command);
-	}
 
 	argc = get_opcode_func(opcode, &command);
 	if (argc == 1)
@@ -113,10 +108,6 @@ command_t tokenize(char *line, unsigned int line_no)
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_no, opcode);
 		error_exit(0, NULL, NULL, NULL);
 	}
-	else
-	{
-		command.arg = 0;
-	}
 
 	return (command);
 }
@@ -139,6 +130,9 @@ int get_opcode_func(char *opcode, command_t *command)
 		{"swap", opcode_swap, 0},
 		{"rotl", opcode_rotl, 0},
 		{"rotr", opcode_rotr, 0},
+		{"pint", opcode_pint, 0},
+		{"pchar", opcode_pchar, 0},
+		{"pstr", opcode_pstr, 0},
 		{NULL, NULL, 0}
 	};
 
