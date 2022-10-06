@@ -31,7 +31,7 @@ void opcode_pop(stack_t **stack,
 {
 	if (stack_len(*stack) < 1)
 	{
-		fprintf(stderr, "L%ld: can't pop an empty stack", line_no);
+		fprintf(stderr, "L%ld: can't pop an empty stack\n", line_no);
 		error_exit(0, NULL, NULL, NULL);
 	}
 	stack_pop(stack);
@@ -54,7 +54,7 @@ void opcode_swap(stack_t **stack,
 	len = stack_len(*stack);
 	if (len < 2)
 	{
-		fprintf(stderr, "L%ld: can't swap, stack too short", line_no);
+		fprintf(stderr, "L%ld: can't swap, stack too short\n", line_no);
 		error_exit(0, NULL, NULL, NULL);
 	}
 	first = stack_pop(stack);
