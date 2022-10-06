@@ -2,24 +2,24 @@
 #include <stdio.h>
 
 #include "monty.h"
+
 /*
  * add - add funtion for the TOS1 & TOS
  * @stack - input
  * Return - mofified list
  */
-stack_t add(stack_t **stack)
+void add(stack_t *stack)
 {
-	stack_t *temp;
-	int add = 0;
-	int i = 0;
-	temp = *stack;
-	while(temp =! NULL || i > 2)
+	if ((stack_len(stack)) < 2)
 	{
-		add += temp->n;
-		stack_pop(temp)
-		temp = temp->prev;
-		i++;
-	}
-	return(temp);
-}
 
+		return();
+	}
+	stack_t *temp;
+	temp = *stack;
+	int a, b, c;
+	a = stack_pop(&temp);
+	b = stack_pop(&temp);
+	c = a + b;
+	stack_push(&temp, c);
+}
