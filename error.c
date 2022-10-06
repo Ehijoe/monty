@@ -5,6 +5,10 @@
 
 /**
  * error_exit - Free resources and exit with failure
+ * @set_vars: Whether the call is to set the variables or exit
+ * @stack: The stack
+ * @program: The program file
+ * @buffer: The line read buffer
  */
 void error_exit(int set_vars, stack_t **stack, FILE *program, char **buffer)
 {
