@@ -33,7 +33,10 @@ typedef struct stack_s
 /**
  * opcode_func - Funtion that runs an opcode
  */
-typedef void (*opcode_func)(stack_t **, stack_type_e *, unsigned long int, int);
+typedef void (*opcode_func)(stack_t **,
+			    stack_type_e *,
+			    unsigned long int,
+			    int);
 
 /**
  * struct instruction_s - opcode and its function
@@ -105,6 +108,10 @@ void opcode_rotr(stack_t **stack, stack_type_e *stack_type,
 void opcode_pall(stack_t **stack, stack_type_e *stack_type,
 		 unsigned long int line_no, int arg);
 void opcode_pint(stack_t **stack, stack_type_e *stack_type,
+		 unsigned long int line_no, int arg);
+void opcode_pchar(stack_t **stack, stack_type_e *stack_type,
+		  unsigned long int line_no, int arg);
+void opcode_pstr(stack_t **stack, stack_type_e *stack_type,
 		 unsigned long int line_no, int arg);
 
 #endif
