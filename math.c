@@ -4,22 +4,24 @@
 #include "monty.h"
 
 /*
- * add - add funtion for the TOS1 & TOS
+ * opcode_add - add funtion for the TOS1 & TOS
  * @stack - input
  * Return - mofified list
  */
-void add(stack_t *stack)
+void opcode_add(stack_t **stack, 
+		__attribute__ ((unused)) stack_type_e * stack_type, 
+		unsigned long int line_no, 
+		__attribute__ ((unused)) int arg)
 {
-	if ((stack_len(stack)) < 2)
-	{
-
-		return();
-	}
-	stack_t *temp;
-	temp = *stack;
 	int a, b, c;
-	a = stack_pop(&temp);
-	b = stack_pop(&temp);
+
+        if (stack_len(*stack) < 2)
+        {
+                fprintf(stderr, "L%ld: can't add, stack too short\n", line_no);
+                error_exit(0, NULL, NULL, NULL);
+        }
+	a = stack_pop(stack);
+	b = stack_pop(stack);
 	c = a + b;
-	stack_push(&temp, c);
+	stack_push(stack, c);
 }

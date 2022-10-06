@@ -106,5 +106,8 @@ void opcode_pall(stack_t **stack, stack_type_e *stack_type,
 		 unsigned long int line_no, int arg);
 void opcode_pint(stack_t **stack, stack_type_e *stack_type,
 		 unsigned long int line_no, int arg);
-
+/* math.c*/
+void opcode_add(stack_t **stack,                                                       __attribute__ ((unused)) stack_type_e * stack_type,
+                unsigned long int line_no,
+                __attribute__ ((unused)) int arg);
 #endif
