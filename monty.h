@@ -79,6 +79,7 @@ int get_opcode_func(char *opcode, command_t *command);
 /* stack.c */
 
 void stack_push(stack_t **stack, int n);
+void queue_push(stack_t **stack, int n);
 int stack_pop(stack_t **stack);
 void stack_free(stack_t *stack);
 int stack_len(stack_t *stack);
@@ -101,6 +102,14 @@ void opcode_rotl(stack_t **stack, stack_type_e *stack_type,
 		 unsigned long int line_no, int arg);
 void opcode_rotr(stack_t **stack, stack_type_e *stack_type,
 		 unsigned long int line_no, int arg);
+
+
+/* mode_opcodes.c */
+
+void opcode_stack(stack_t **stack, stack_type_e *stack_type,
+		  unsigned long int line_no, int arg);
+void opcode_queue(stack_t **stack, stack_type_e *stack_type,
+		  unsigned long int line_no, int arg);
 
 
 /* print_opcodes.c */

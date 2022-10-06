@@ -31,6 +31,40 @@ void stack_push(stack_t **stack, int n)
 }
 
 /**
+ * queue_push - Enqueue an item onto a queue
+ * @stack: Pointer to top of stack
+ * @n: Value to push
+ */
+void queue_push(stack_t **stack, int n)
+{
+	stack_t *new, *bottom;
+
+	new = malloc(sizeof(stack_t));
+	if (new == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		error_exit(0, NULL, NULL, NULL);
+	}
+
+	new->n = n;
+	new->prev = NULL;
+
+	bottom = *stack;
+	if (bottom == NULL)
+	{
+		*stack = new;
+		new->next = NULL;
+	}
+	else
+	{
+		while (bottom->prev != NULL)
+			bottom = bottom->prev;
+		new->next = bottom;
+		bottom->prev = new;
+	}
+}
+
+/**
  * stack_pop - Pop an item off a stack
  * @stack: Pointer to top of stack
  *
