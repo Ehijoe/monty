@@ -134,6 +134,11 @@ int get_opcode_func(char *opcode, command_t *command)
 	instruction_t opcodes[] = {
 		{"push", opcode_push, 1},
 		{"pall", opcode_pall, 0},
+		{"nop", NULL, 0},
+		{"pop", opcode_pop, 0},
+		{"swap", opcode_swap, 0},
+		{"rotl", opcode_rotl, 0},
+		{"rotr", opcode_rotr, 0},
 		{NULL, NULL, 0}
 	};
 
