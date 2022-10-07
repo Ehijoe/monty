@@ -48,6 +48,11 @@ void opcode_mod(stack_t **stack,
 		error_exit(0, NULL, NULL, NULL);
 	}
 	a = stack_pop(stack);
+	if (a == 0)
+	{
+		fprintf(stderr, "L%ld: division by zero\n", line_no);
+		error_exit(0, NULL, NULL, NULL);
+	}
 	b = stack_pop(stack);
 	c = b % a;
 	stack_push(stack, c);
@@ -123,6 +128,11 @@ void opcode_div(stack_t **stack,
 		error_exit(0, NULL, NULL, NULL);
 	}
 	a = stack_pop(stack);
+	if (a == 0)
+	{
+		fprintf(stderr, "L%ld: division by zero\n", line_no);
+		error_exit(0, NULL, NULL, NULL);
+	}
 	b = stack_pop(stack);
 	c = b / a;
 	stack_push(stack, c);
