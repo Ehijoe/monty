@@ -67,7 +67,9 @@ void opcode_pchar(stack_t **stack,
 	val = (*stack)->n;
 	if (val < 0 || val > 127)
 	{
-		fprintf(stderr, "L%ld: can't pchar, value out of range", line_no);
+		fprintf(stderr,
+			"L%ld: can't pchar, value out of range\n",
+			line_no);
 		error_exit(0, NULL, NULL, NULL);
 	}
 	printf("%c\n", val);
