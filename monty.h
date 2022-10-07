@@ -123,4 +123,11 @@ void opcode_pchar(stack_t **stack, stack_type_e *stack_type,
 void opcode_pstr(stack_t **stack, stack_type_e *stack_type,
 		 unsigned long int line_no, int arg);
 
+
+/* math.c */
+
+void opcode_add(stack_t **stack, stack_type_e *stack_type,
+		unsigned long int line_no, int arg);
+
+
 #endif

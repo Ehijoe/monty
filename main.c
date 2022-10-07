@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	stack_t *stack = NULL;
 	stack_type_e stack_type = STACK;
 	char *line = NULL;
-	unsigned long int line_size = 0, line_no = 1;
+	size_t line_size = 0, line_no = 1;
 	FILE *program;
 	command_t command;
 
@@ -135,6 +135,7 @@ int get_opcode_func(char *opcode, command_t *command)
 		{"pstr", opcode_pstr, 0},
 		{"queue", opcode_queue, 0},
 		{"stack", opcode_stack, 0},
+		{"add", opcode_add, 0},
 		{NULL, NULL, 0}
 	};
 
