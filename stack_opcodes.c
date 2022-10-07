@@ -10,11 +10,14 @@
  * @arg: The argument to the opcode
  */
 void opcode_push(stack_t **stack,
-		 __attribute__ ((unused)) stack_type_e * stack_type,
+		 stack_type_e *stack_type,
 		 __attribute__ ((unused)) unsigned long int line_no,
 		 int arg)
 {
-	stack_push(stack, arg);
+	if (*stack_type == STACK)
+		stack_push(stack, arg);
+	else
+		queue_push(stack, arg);
 }
 
 /**
@@ -25,7 +28,7 @@ void opcode_push(stack_t **stack,
  * @arg: The argument to the opcode
  */
 void opcode_pop(stack_t **stack,
-		__attribute__ ((unused)) stack_type_e * stack_type,
+		__attribute__ ((unused)) stack_type_e *stack_type,
 		unsigned long int line_no,
 		__attribute__ ((unused)) int arg)
 {
@@ -45,7 +48,7 @@ void opcode_pop(stack_t **stack,
  * @arg: The argument to the opcode
  */
 void opcode_swap(stack_t **stack,
-		 __attribute__ ((unused)) stack_type_e * stack_type,
+		 __attribute__ ((unused)) stack_type_e *stack_type,
 		 unsigned long int line_no,
 		 __attribute__ ((unused)) int arg)
 {
@@ -71,7 +74,7 @@ void opcode_swap(stack_t **stack,
  * @arg: The argument to the opcode
  */
 void opcode_rotl(stack_t **stack,
-		 __attribute__ ((unused)) stack_type_e * stack_type,
+		 __attribute__ ((unused)) stack_type_e *stack_type,
 		 __attribute__ ((unused)) unsigned long int line_no,
 		 __attribute__ ((unused)) int arg)
 {
@@ -98,7 +101,7 @@ void opcode_rotl(stack_t **stack,
  * @arg: The argument to the opcode
  */
 void opcode_rotr(stack_t **stack,
-		 __attribute__ ((unused)) stack_type_e * stack_type,
+		 __attribute__ ((unused)) stack_type_e *stack_type,
 		 __attribute__ ((unused)) unsigned long int line_no,
 		 __attribute__ ((unused)) int arg)
 {

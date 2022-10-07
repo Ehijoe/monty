@@ -133,6 +133,8 @@ int get_opcode_func(char *opcode, command_t *command)
 		{"pint", opcode_pint, 0},
 		{"pchar", opcode_pchar, 0},
 		{"pstr", opcode_pstr, 0},
+		{"queue", opcode_queue, 0},
+		{"stack", opcode_stack, 0},
 		{NULL, NULL, 0}
 	};
 
