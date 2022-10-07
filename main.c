@@ -136,6 +136,10 @@ int get_opcode_func(char *opcode, command_t *command)
 		{"queue", opcode_queue, 0},
 		{"stack", opcode_stack, 0},
 		{"add", opcode_add, 0},
+		{"sub", opcode_sub, 0},
+		{"mul", opcode_mul, 0},
+		{"div", opcode_div, 0},
+		{"mod", opcode_mod, 0},
 		{NULL, NULL, 0}
 	};
 

@@ -128,6 +128,14 @@ void opcode_pstr(stack_t **stack, stack_type_e *stack_type,
 
 void opcode_add(stack_t **stack, stack_type_e *stack_type,
 		unsigned long int line_no, int arg);
+void opcode_sub(stack_t **stack, stack_type_e *stack_type,
+		unsigned long int line_no, int arg);
+void opcode_mul(stack_t **stack, stack_type_e *stack_type,
+		unsigned long int line_no, int arg);
+void opcode_div(stack_t **stack, stack_type_e *stack_type,
+		unsigned long int line_no, int arg);
+void opcode_mod(stack_t **stack, stack_type_e *stack_type,
+		unsigned long int line_no, int arg);
 
 
 #endif
